@@ -1,0 +1,15 @@
+{
+  "sections": {
+    "main": {
+      "type": "collapsible-content",
+      "blocks": {
+        "q1": {"type":"collapsible_row","settings":{"heading":"What is the delivery timeline?","icon":"check_mark","row_content":"<p>Most orders deliver within 3-7 business days depending on location.</p>"}},
+        "q2": {"type":"collapsible_row","settings":{"heading":"Do you offer COD?","icon":"check_mark","row_content":"<p>Yes, COD is available for eligible PIN codes.</p>"}},
+        "q3": {"type":"collapsible_row","settings":{"heading":"How do returns work?","icon":"check_mark","row_content":"<p>Initiate returns from support with your order details as per policy.</p>"}}
+      },
+      "block_order": ["q1","q2","q3"],
+      "settings": {"caption":"Support","heading":"Frequently Asked Questions","heading_size":"h1","layout":"none","color_scheme":"background-1","padding_top":36,"padding_bottom":48}
+    }
+  },
+  "order": ["main"]
+}

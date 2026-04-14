@@ -132,6 +132,15 @@
           </predictive-search>
         {%- endif -%}
 
+        <div class="ww-search-suggestions">
+          <p class="caption">Trending searches:</p>
+          <div>
+            <a href="{{ routes.search_url }}?q=bedsheets">Bedsheets</a>
+            <a href="{{ routes.search_url }}?q=pillow+covers">Pillow Covers</a>
+            <a href="{{ routes.search_url }}?q=comforter">Comforters</a>
+          </div>
+          <p class="caption">Recent search history is saved in your browser via predictive search.</p>
+        </div>
       </div>
       {%- if search.performed -%}
         {%- unless section.settings.enable_filtering or section.settings.enable_sorting -%}
@@ -141,6 +150,7 @@
         {%- endunless -%}
         {%- if search.results_count == 0 and search.filters == empty -%}
           <p role="status">{{ 'templates.search.no_results' | t: terms: search.terms }}</p>
+          <p class="caption">Try searching for bedsheets, duvet cover, pillow cover, or cotton bedding set.</p>
         {%- endif -%}
       {%- endif -%}
     </div>

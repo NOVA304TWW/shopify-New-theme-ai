@@ -1,1 +1,73 @@
-{"sections":{"collection_list_rxPKfr":{"type":"collection-list","blocks":{"featured_collection_DrLy74":{"type":"featured_collection","settings":{"collection":"comforters"}},"featured_collection_94fQVT":{"type":"featured_collection","settings":{"collection":"bedsheet"}},"featured_collection_m9rLa7":{"type":"featured_collection","settings":{"collection":"mattress-protectors"}}},"block_order":["featured_collection_DrLy74","featured_collection_94fQVT","featured_collection_m9rLa7"],"settings":{"title":"Collections","heading_size":"h1","image_ratio":"square","columns_desktop":3,"color_scheme":"","show_view_all":false,"columns_mobile":"1","swipe_on_mobile":false,"padding_top":36,"padding_bottom":36}},"featured_collection":{"type":"featured-collection","settings":{"title":"","heading_size":"h2","description":"","show_description":false,"description_style":"body","collection":"all","products_to_show":24,"columns_desktop":4,"full_width":false,"show_view_all":true,"view_all_style":"outline","enable_desktop_slider":false,"color_scheme":"background-1","image_ratio":"square","image_shape":"default","show_secondary_image":true,"show_vendor":false,"show_rating":false,"enable_quick_add":false,"columns_mobile":"2","swipe_on_mobile":false,"padding_top":0,"padding_bottom":36}}},"order":["collection_list_rxPKfr","featured_collection"]}
+{
+  "sections": {
+    "woodwhite_home": {
+      "type": "woodwhite-home",
+      "blocks": {
+        "trust_1": {"type": "trust", "settings": {"title": "100% Cotton", "text": "Premium breathable fabric"}},
+        "trust_2": {"type": "trust", "settings": {"title": "Premium Quality", "text": "Hotel-like finish"}},
+        "trust_3": {"type": "trust", "settings": {"title": "Fast Delivery", "text": "Quick dispatch"}},
+        "trust_4": {"type": "trust", "settings": {"title": "Easy Returns", "text": "Support-first policy"}},
+        "cat_1": {"type": "category", "settings": {"title": "Bedsheets"}},
+        "cat_2": {"type": "category", "settings": {"title": "Pillow Covers"}},
+        "cat_3": {"type": "category", "settings": {"title": "Comforters"}},
+        "cat_4": {"type": "category", "settings": {"title": "Bedding Sets"}},
+        "benefit_1": {"type": "benefit", "settings": {"title": "Softness", "text": "Feather-soft touch for restful sleep every night."}},
+        "benefit_2": {"type": "benefit", "settings": {"title": "Breathability", "text": "Moisture-friendly weave for year-round comfort."}},
+        "benefit_3": {"type": "benefit", "settings": {"title": "Durability", "text": "Premium stitching and long-lasting fabric quality."}},
+        "tes_1": {"type": "testimonial", "settings": {"quote": "Amazing quality and premium packaging. My room feels like a boutique hotel.", "author": "Ritika S."}},
+        "tes_2": {"type": "testimonial", "settings": {"quote": "The bedsheet is incredibly soft and breathable. Worth every rupee.", "author": "Aman K."}},
+        "social_1": {"type": "social"},
+        "social_2": {"type": "social"},
+        "social_3": {"type": "social"},
+        "faq_1": {"type": "faq", "settings": {"question": "Do you offer COD?", "answer": "Yes, COD is available in most PIN codes across India."}},
+        "faq_2": {"type": "faq", "settings": {"question": "How long does delivery take?", "answer": "Most orders are delivered in 3-7 business days."}}
+      },
+      "block_order": ["trust_1", "trust_2", "trust_3", "trust_4", "cat_1", "cat_2", "cat_3", "cat_4", "benefit_1", "benefit_2", "benefit_3", "tes_1", "tes_2", "social_1", "social_2", "social_3", "faq_1", "faq_2"],
+      "settings": {
+        "heading": "Luxury Bedding for Everyday Comfort",
+        "subheading": "Premium bedsheets, comforters, and pillow covers designed for soft sleep, elegant homes, and everyday calm.",
+        "primary_button_label": "Shop Collection",
+        "secondary_button_label": "Best Sellers",
+        "category_heading": "Explore bedroom essentials",
+        "category_text": "Everything you need to create a clean, soft, luxurious sleep space.",
+        "story_heading": "Comfort-first craftsmanship",
+        "story_text": "From yarn to finish, WOODWHITE focuses on breathability, softness, and long-term durability with modern styling.",
+        "mobile_cta_label": "Shop Collection"
+      }
+    },
+    "featured_collection": {
+      "type": "featured-collection",
+      "settings": {
+        "title": "Best Sellers",
+        "heading_size": "h2",
+        "collection": "all",
+        "products_to_show": 8,
+        "columns_desktop": 4,
+        "show_view_all": true,
+        "view_all_style": "solid",
+        "enable_desktop_slider": false,
+        "image_ratio": "square",
+        "show_secondary_image": true,
+        "show_vendor": false,
+        "show_rating": false,
+        "enable_quick_add": true,
+        "columns_mobile": "2",
+        "swipe_on_mobile": true,
+        "padding_top": 20,
+        "padding_bottom": 20
+      }
+    },
+    "newsletter": {
+      "type": "newsletter",
+      "settings": {
+        "heading": "Get 10% off your first order",
+        "heading_size": "h2",
+        "subheading": "<p>Join the WOODWHITE list for exclusive drops and bedroom styling tips.</p>",
+        "color_scheme": "background-1",
+        "padding_top": 24,
+        "padding_bottom": 40
+      }
+    }
+  },
+  "order": ["woodwhite_home", "featured_collection", "newsletter"]
+}

@@ -1,0 +1,172 @@
+{{ 'component-slider.css' | asset_url | stylesheet_tag }}
+
+<section class="woodwhite-home color-{{ section.settings.color_scheme }} gradient">
+  <div class="woodwhite-hero page-width">
+    <div class="woodwhite-hero__content">
+      <p class="woodwhite-kicker">WOODWHITE</p>
+      <h1>{{ section.settings.heading }}</h1>
+      <p class="woodwhite-subheading">{{ section.settings.subheading }}</p>
+      <div class="woodwhite-hero__actions">
+        <a href="{{ section.settings.primary_button_link }}" class="button">{{ section.settings.primary_button_label }}</a>
+        <a href="{{ section.settings.secondary_button_link }}" class="button button--secondary">{{ section.settings.secondary_button_label }}</a>
+      </div>
+    </div>
+    <div class="woodwhite-hero__media">
+      {% if section.settings.hero_image != blank %}
+        {{ section.settings.hero_image | image_url: width: 1400 | image_tag: class: 'woodwhite-hero__image', loading: 'eager', alt: section.settings.heading }}
+      {% else %}
+        {{ 'lifestyle-1' | placeholder_svg_tag: 'placeholder-svg woodwhite-hero__image' }}
+      {% endif %}
+    </div>
+  </div>
+
+  <div class="woodwhite-trust-strip page-width">
+    {% for block in section.blocks %}
+      {% if block.type == 'trust' %}
+        <article class="woodwhite-chip" {{ block.shopify_attributes }}>
+          <h3>{{ block.settings.title }}</h3>
+          <p>{{ block.settings.text }}</p>
+        </article>
+      {% endif %}
+    {% endfor %}
+  </div>
+
+  <div class="woodwhite-section page-width">
+    <div class="woodwhite-section__header">
+      <h2>{{ section.settings.category_heading }}</h2>
+      <p>{{ section.settings.category_text }}</p>
+    </div>
+    <div class="woodwhite-category-grid">
+      {% for block in section.blocks %}
+        {% if block.type == 'category' %}
+          <a href="{{ block.settings.link }}" class="woodwhite-category" {{ block.shopify_attributes }}>
+            {% if block.settings.image != blank %}
+              {{ block.settings.image | image_url: width: 720 | image_tag: loading: 'lazy', alt: block.settings.title }}
+            {% else %}
+              {{ 'collection-2' | placeholder_svg_tag: 'placeholder-svg' }}
+            {% endif %}
+            <span>{{ block.settings.title }}</span>
+          </a>
+        {% endif %}
+      {% endfor %}
+    </div>
+  </div>
+
+  <div class="woodwhite-section page-width woodwhite-story">
+    <div>
+      <h2>{{ section.settings.story_heading }}</h2>
+      <p>{{ section.settings.story_text }}</p>
+    </div>
+    <div class="woodwhite-story__media">
+      {% if section.settings.story_image != blank %}
+        {{ section.settings.story_image | image_url: width: 1100 | image_tag: loading: 'lazy', alt: section.settings.story_heading }}
+      {% else %}
+        {{ 'lifestyle-2' | placeholder_svg_tag: 'placeholder-svg' }}
+      {% endif %}
+    </div>
+  </div>
+
+  <div class="woodwhite-section page-width">
+    <div class="woodwhite-section__header">
+      <h2>Why WOODWHITE</h2>
+    </div>
+    <div class="woodwhite-benefits">
+      {% for block in section.blocks %}
+        {% if block.type == 'benefit' %}
+          <article class="woodwhite-card" {{ block.shopify_attributes }}>
+            <h3>{{ block.settings.title }}</h3>
+            <p>{{ block.settings.text }}</p>
+          </article>
+        {% endif %}
+      {% endfor %}
+    </div>
+  </div>
+
+  <div class="woodwhite-section page-width">
+    <div class="woodwhite-section__header">
+      <h2>What customers are saying</h2>
+    </div>
+    <div class="woodwhite-testimonials">
+      {% for block in section.blocks %}
+        {% if block.type == 'testimonial' %}
+          <blockquote class="woodwhite-card" {{ block.shopify_attributes }}>
+            <p>“{{ block.settings.quote }}”</p>
+            <cite>{{ block.settings.author }}</cite>
+          </blockquote>
+        {% endif %}
+      {% endfor %}
+    </div>
+  </div>
+
+  <div class="woodwhite-section page-width">
+    <div class="woodwhite-section__header">
+      <h2>As seen in real bedrooms</h2>
+      <p>Shop-able social proof for trust and styling inspiration.</p>
+    </div>
+    <div class="woodwhite-instagram-grid">
+      {% for block in section.blocks %}
+        {% if block.type == 'social' %}
+          <a href="{{ block.settings.link }}" class="woodwhite-social-item" {{ block.shopify_attributes }}>
+            {% if block.settings.image != blank %}
+              {{ block.settings.image | image_url: width: 480 | image_tag: loading: 'lazy', alt: 'WOODWHITE social proof' }}
+            {% else %}
+              {{ 'product-1' | placeholder_svg_tag: 'placeholder-svg' }}
+            {% endif %}
+          </a>
+        {% endif %}
+      {% endfor %}
+    </div>
+  </div>
+
+  <div class="woodwhite-section page-width">
+    <div class="woodwhite-section__header">
+      <h2>Frequently asked questions</h2>
+    </div>
+    <div class="woodwhite-faq-grid">
+      {% for block in section.blocks %}
+        {% if block.type == 'faq' %}
+          <details class="woodwhite-faq" {{ block.shopify_attributes }}>
+            <summary>{{ block.settings.question }}</summary>
+            <p>{{ block.settings.answer }}</p>
+          </details>
+        {% endif %}
+      {% endfor %}
+    </div>
+  </div>
+
+  <a class="woodwhite-mobile-sticky-cta" href="{{ section.settings.primary_button_link }}">{{ section.settings.mobile_cta_label }}</a>
+</section>
+
+{% schema %}
+{
+  "name": "WOODWHITE Home",
+  "settings": [
+    { "type": "color_scheme", "id": "color_scheme", "label": "Color scheme", "default": "background-1" },
+    { "type": "text", "id": "heading", "label": "Heading", "default": "Luxury Bedding for Everyday Comfort" },
+    { "type": "textarea", "id": "subheading", "label": "Subheading", "default": "Experience hotel-like softness with premium bedsheets, comforters, pillow covers, and curated bedroom essentials." },
+    { "type": "image_picker", "id": "hero_image", "label": "Hero image" },
+    { "type": "text", "id": "primary_button_label", "label": "Primary CTA label", "default": "Shop Collection" },
+    { "type": "url", "id": "primary_button_link", "label": "Primary CTA link" },
+    { "type": "text", "id": "secondary_button_label", "label": "Secondary CTA label", "default": "Best Sellers" },
+    { "type": "url", "id": "secondary_button_link", "label": "Secondary CTA link" },
+    { "type": "text", "id": "category_heading", "label": "Category heading", "default": "Shop by category" },
+    { "type": "textarea", "id": "category_text", "label": "Category text", "default": "Designed for comfort, made to last, and styled for elegant bedrooms." },
+    { "type": "text", "id": "story_heading", "label": "Story heading", "default": "Crafted for breathable comfort" },
+    { "type": "textarea", "id": "story_text", "label": "Story text", "default": "Our fabrics are selected for softness, airflow, and long-term durability—perfect for Indian weather and everyday luxury." },
+    { "type": "image_picker", "id": "story_image", "label": "Story image" },
+    { "type": "text", "id": "mobile_cta_label", "label": "Mobile sticky CTA", "default": "Shop WOODWHITE" }
+  ],
+  "blocks": [
+    {"type":"trust","name":"Trust chip","limit":6,"settings":[{"type":"text","id":"title","label":"Title","default":"100% Cotton"},{"type":"text","id":"text","label":"Text","default":"Premium quality"}]},
+    {"type":"category","name":"Category","limit":8,"settings":[{"type":"image_picker","id":"image","label":"Image"},{"type":"text","id":"title","label":"Title","default":"Bedsheets"},{"type":"url","id":"link","label":"Link"}]},
+    {"type":"benefit","name":"Benefit","limit":6,"settings":[{"type":"text","id":"title","label":"Title","default":"Ultra soft finish"},{"type":"textarea","id":"text","label":"Text","default":"Premium weave for cloud-like comfort and reduced pilling over time."}]},
+    {"type":"testimonial","name":"Testimonial","limit":6,"settings":[{"type":"textarea","id":"quote","label":"Quote","default":"The fabric quality feels luxurious and the color looks exactly like the photos."},{"type":"text","id":"author","label":"Author","default":"Verified Buyer"}]},
+    {"type":"social","name":"Social proof image","limit":8,"settings":[{"type":"image_picker","id":"image","label":"Image"},{"type":"url","id":"link","label":"Post/Product link"}]},
+    {"type":"faq","name":"FAQ","limit":8,"settings":[{"type":"text","id":"question","label":"Question","default":"Are these bedsheets suitable for sensitive skin?"},{"type":"textarea","id":"answer","label":"Answer","default":"Yes. WOODWHITE fabrics are skin-friendly and breathable for all-season comfort."}]}
+  ],
+  "presets": [{
+    "name": "WOODWHITE Home",
+    "blocks": [{"type":"trust"},{"type":"trust","settings":{"title":"Premium Quality","text":"Luxury hotel finish"}},{"type":"trust","settings":{"title":"Fast Delivery","text":"Pan-India shipping"}},{"type":"trust","settings":{"title":"Easy Returns","text":"Hassle-free support"}},{"type":"category"},{"type":"category","settings":{"title":"Pillow Covers"}},{"type":"category","settings":{"title":"Comforters"}},{"type":"category","settings":{"title":"Bedding Sets"}},{"type":"benefit"},{"type":"benefit","settings":{"title":"Breathable fabrics"}},{"type":"benefit","settings":{"title":"Durable quality"}},{"type":"testimonial"},{"type":"testimonial"},{"type":"social"},{"type":"social"},{"type":"social"},{"type":"faq"},{"type":"faq"}]
+  }]
+}
+{% endschema %}

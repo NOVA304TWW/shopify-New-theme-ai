@@ -1,0 +1,24 @@
+{
+  "sections": {
+    "hero": {
+      "type": "rich-text",
+      "blocks": {
+        "heading": {"type":"heading","settings":{"heading":"Our WOODWHITE Story","heading_size":"h1"}},
+        "text": {"type":"text","settings":{"text":"<p>WOODWHITE was built to bring premium sleep comfort into everyday homes with calming aesthetics, trusted quality, and thoughtful craftsmanship.</p>"}}
+      },
+      "block_order": ["heading","text"],
+      "settings": {"desktop_content_position":"center","content_alignment":"center","full_width":false,"padding_top":36,"padding_bottom":20}
+    },
+    "values": {
+      "type": "multicolumn",
+      "blocks": {
+        "col1": {"type":"column","settings":{"title":"Premium Fabrics","text":"<p>Soft, breathable, skin-friendly textiles.</p>"}},
+        "col2": {"type":"column","settings":{"title":"Made to Last","text":"<p>Durable stitching and long-wear performance.</p>"}},
+        "col3": {"type":"column","settings":{"title":"Customer First","text":"<p>Fast support, easy returns, trusted delivery.</p>"}}
+      },
+      "block_order": ["col1","col2","col3"],
+      "settings": {"title":"Why families trust WOODWHITE","heading_size":"h2","columns_desktop":3,"column_alignment":"left","background_style":"none","button_label":"Shop Collection","button_link":"shopify://collections/all","color_scheme":"background-1","padding_top":12,"padding_bottom":48}
+    }
+  },
+  "order": ["hero", "values"]
+}

@@ -1,0 +1,15 @@
+{
+  "sections": {
+    "intro": {
+      "type": "rich-text",
+      "blocks": {
+        "heading": {"type":"heading","settings":{"heading":"Track Your Order","heading_size":"h1"}},
+        "text": {"type":"text","settings":{"text":"<p>Enter your order details in the tracking app below, or contact support for assistance.</p>"}}
+      },
+      "block_order": ["heading","text"],
+      "settings": {"desktop_content_position":"center","content_alignment":"center","full_width":false,"padding_top":36,"padding_bottom":20}
+    },
+    "apps": {"type":"apps","settings":{"include_margins":true}}
+  },
+  "order": ["intro","apps"]
+}
