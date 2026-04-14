@@ -33,6 +33,14 @@
     if ratio == 0 or ratio == null
       assign ratio = 1
     endif
+    assign custom_badge = ''
+    if card_product.tags contains 'bestseller'
+      assign custom_badge = 'Bestseller'
+    elsif card_product.tags contains 'new'
+      assign custom_badge = 'New'
+    elsif card_product.tags contains 'premium-cotton'
+      assign custom_badge = 'Premium Cotton'
+    endif
   -%}
   <div class="card-wrapper product-card-wrapper underline-links-hover">
     <div
@@ -120,7 +128,11 @@
             </h3>
           </div>
           <div class="card__badge {{ settings.badge_position }}">
-            {%- if card_product.available == false -%}
+            {%- if custom_badge != blank -%}
+              <span id="NoMediaStandardBadge-{{ section_id }}-{{ card_product.id }}" class="badge badge--bottom-left color-{{ settings.sale_badge_color_scheme }}">
+                {{ custom_badge }}
+              </span>
+            {%- elsif card_product.available == false -%}
               <span
                 id="NoMediaStandardBadge-{{ section_id }}-{{ card_product.id }}"
                 class="badge badge--bottom-left color-{{ settings.sold_out_badge_color_scheme }}"

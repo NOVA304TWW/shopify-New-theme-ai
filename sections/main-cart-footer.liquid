@@ -26,6 +26,20 @@
               {% render block %}
             {%- when 'subtotal' -%}
               <div class="js-contents" {{ block.shopify_attributes }}>
+                {%- assign free_shipping_target = 3000 -%}
+                {%- assign subtotal_value = cart.total_price | divided_by: 100.0 -%}
+                {%- assign progress_percent = subtotal_value | times: 100.0 | divided_by: free_shipping_target -%}
+                {%- if progress_percent > 100 -%}{%- assign progress_percent = 100 -%}{%- endif -%}
+                <div class="ww-cart-progress">
+                  <p>
+                    {%- if subtotal_value >= free_shipping_target -%}
+                      You unlocked free shipping.
+                    {%- else -%}
+                      Spend {{ free_shipping_target | minus: subtotal_value | times: 100 | money }} more for free shipping.
+                    {%- endif -%}
+                  </p>
+                  <div class="ww-progress-bar"><span style="width: {{ progress_percent }}%"></span></div>
+                </div>
                 <div class="totals">
                   <h2 class="totals__subtotal">{{ 'sections.cart.subtotal' | t }}</h2>
                   <p class="totals__subtotal-value">{{ cart.total_price | money_with_currency }}</p>
@@ -56,6 +70,13 @@
                     {{ 'sections.cart.taxes_and_shipping_at_checkout' | t }}
                   {%- endif -%}
                 </small>
+
+                <div class="ww-cart-coupon field">
+                  <label class="field__label" for="ww-cart-coupon">Coupon code</label>
+                  <input id="ww-cart-coupon" class="field__input" type="text" placeholder="Apply at checkout" disabled>
+                </div>
+
+                <p class="caption-large">Secure checkout · COD available · Easy returns</p>
               </div>
             {%- else -%}
               <div class="cart__ctas" {{ block.shopify_attributes }}>
@@ -86,6 +107,18 @@
               {%- endif -%}
           {%- endcase -%}
         {% endfor %}
+
+        <div class="ww-cart-upsells">
+          <h3>Complete your bedroom setup</h3>
+          <div class="ww-cart-upsells__grid">
+            {%- for upsell_product in collections['all'].products limit: 4 -%}
+              <a href="{{ upsell_product.url }}" class="woodwhite-card">
+                <strong>{{ upsell_product.title }}</strong>
+                <span>{{ upsell_product.price | money }}</span>
+              </a>
+            {%- endfor -%}
+          </div>
+        </div>
 
         <div id="cart-errors"></div>
       </div>

@@ -1,0 +1,257 @@
+:root {
+  --woodwhite-bg: #f8f5ef;
+  --woodwhite-paper: #fffdf9;
+  --woodwhite-ink: #2f2a24;
+  --woodwhite-muted: #6e6256;
+  --woodwhite-accent: #b78a5f;
+  --woodwhite-shadow: 0 10px 30px rgba(52, 40, 29, 0.08);
+}
+
+body {
+  background: linear-gradient(180deg, #fbf9f5 0%, #f6f1e8 100%);
+  color: var(--woodwhite-ink);
+}
+
+h1, h2, h3, .h1, .h2, .h3 {
+  letter-spacing: -0.02em;
+}
+
+.button {
+  border-radius: 999px;
+  text-transform: none;
+}
+
+.header-wrapper, .shopify-section-group-footer-group {
+  backdrop-filter: blur(8px);
+}
+
+.woodwhite-home {
+  padding-bottom: 7rem;
+}
+
+.woodwhite-hero {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 3rem;
+  align-items: center;
+  padding-top: 4rem;
+}
+
+.woodwhite-kicker {
+  color: var(--woodwhite-accent);
+  letter-spacing: 0.24em;
+  font-size: 1.2rem;
+  text-transform: uppercase;
+}
+
+.woodwhite-subheading,
+.woodwhite-section__header p,
+.woodwhite-chip p,
+.woodwhite-card p {
+  color: var(--woodwhite-muted);
+}
+
+.woodwhite-hero__actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1rem;
+  margin-top: 2rem;
+}
+
+.woodwhite-hero__image,
+.woodwhite-story img,
+.woodwhite-category img,
+.woodwhite-social-item img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border-radius: 2rem;
+  box-shadow: var(--woodwhite-shadow);
+}
+
+.woodwhite-trust-strip {
+  margin-top: 2.5rem;
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: 1rem;
+}
+
+.woodwhite-chip,
+.woodwhite-card,
+.product__info-container,
+.cart__footer,
+.cart-item {
+  background: var(--woodwhite-paper);
+  border: 1px solid rgba(183, 138, 95, 0.15);
+  border-radius: 1.6rem;
+  box-shadow: var(--woodwhite-shadow);
+}
+
+.woodwhite-chip {
+  padding: 1.6rem;
+}
+
+.woodwhite-section {
+  margin-top: 4.5rem;
+}
+
+.woodwhite-section__header {
+  margin-bottom: 1.8rem;
+}
+
+.woodwhite-category-grid,
+.woodwhite-benefits,
+.woodwhite-testimonials,
+.woodwhite-instagram-grid,
+.woodwhite-faq-grid {
+  display: grid;
+  gap: 1.6rem;
+}
+
+.woodwhite-category-grid { grid-template-columns: repeat(4, minmax(0, 1fr)); }
+.woodwhite-benefits,
+.woodwhite-testimonials { grid-template-columns: repeat(3, minmax(0, 1fr)); }
+.woodwhite-instagram-grid { grid-template-columns: repeat(4, minmax(0, 1fr)); }
+
+.woodwhite-category { text-decoration: none; color: inherit; display: grid; gap: .8rem; }
+
+.woodwhite-card { padding: 2rem; margin: 0; }
+
+.woodwhite-story {
+  display: grid;
+  grid-template-columns: 1fr 1.2fr;
+  gap: 2rem;
+  align-items: center;
+}
+
+.woodwhite-faq {
+  background: var(--woodwhite-paper);
+  border-radius: 1.2rem;
+  border: 1px solid rgba(0, 0, 0, 0.08);
+  padding: 1.2rem 1.4rem;
+}
+
+.woodwhite-mobile-sticky-cta {
+  display: none;
+}
+
+.card__badge .badge {
+  border-radius: 999px;
+  font-size: 1.1rem;
+  letter-spacing: .06em;
+}
+
+.template-collection .facets,
+.template-search .facets,
+.main-search {
+  background: var(--woodwhite-paper);
+  border-radius: 1.4rem;
+}
+
+.product__info-container {
+  padding: 2rem;
+}
+
+.ww-product-meta {
+  margin: 1.2rem 0;
+  padding: 1.2rem;
+  border: 1px dashed rgba(183, 138, 95, 0.4);
+  border-radius: 1rem;
+  background: #fff;
+}
+
+.ww-cart-upsells {
+  margin-top: 2rem;
+}
+
+.ww-cart-upsells__grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 1rem;
+}
+
+.ww-cart-progress {
+  margin-bottom: 1.6rem;
+}
+
+.ww-progress-bar {
+  width: 100%;
+  height: .8rem;
+  border-radius: 99px;
+  background: #eee3d6;
+  overflow: hidden;
+}
+
+.ww-progress-bar span {
+  display: block;
+  height: 100%;
+  background: linear-gradient(90deg, #d2b08d 0%, #b78a5f 100%);
+}
+
+@media screen and (max-width: 989px) {
+  .woodwhite-hero,
+  .woodwhite-story,
+  .woodwhite-trust-strip,
+  .woodwhite-category-grid,
+  .woodwhite-benefits,
+  .woodwhite-testimonials,
+  .woodwhite-instagram-grid {
+    grid-template-columns: 1fr 1fr;
+  }
+
+  .product__info-container .product-form {
+    position: sticky;
+    bottom: .8rem;
+    background: var(--woodwhite-paper);
+    padding: 1rem;
+    border-radius: 1.2rem;
+    box-shadow: var(--woodwhite-shadow);
+    z-index: 3;
+  }
+
+  .woodwhite-mobile-sticky-cta {
+    display: block;
+    position: fixed;
+    left: 1rem;
+    right: 1rem;
+    bottom: 1rem;
+    z-index: 20;
+    text-align: center;
+    padding: 1.2rem;
+    border-radius: 999px;
+    text-decoration: none;
+    background: var(--woodwhite-ink);
+    color: #fff;
+    box-shadow: var(--woodwhite-shadow);
+  }
+}
+
+@media screen and (max-width: 749px) {
+  .woodwhite-hero,
+  .woodwhite-trust-strip,
+  .woodwhite-category-grid,
+  .woodwhite-benefits,
+  .woodwhite-testimonials,
+  .woodwhite-instagram-grid,
+  .ww-cart-upsells__grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+.ww-search-suggestions {
+  margin-top: 1.2rem;
+}
+
+.ww-search-suggestions div {
+  display: flex;
+  gap: .8rem;
+  flex-wrap: wrap;
+}
+
+.ww-search-suggestions a {
+  padding: .6rem 1.2rem;
+  border-radius: 99px;
+  background: #efe5d8;
+  text-decoration: none;
+  color: var(--woodwhite-ink);
+}
